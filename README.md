@@ -2,6 +2,26 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+# React.js Course: Navigation with React Router
+
+This course will enable you to learn how to implement routes in your web application using React.js and React Router. URLs are an essential part of any web application as they allow us to access different views and better organize our site.
+
+You will learn how to create routes for your web page, which will make the sections of your web page easier to share on the internet.
+
+This course is taught by your instructor JuanDC, who will guide you through the concepts and practices of navigation with React Router.
+
+## Course Content
+
+1. Introduction to React Router
+2. Creating routes
+3. Navigation between views
+4. Route parameters
+5. Nested routes
+6. Redirects
+7. 404 and not found routes
+8. Route protection
+
 ## Available Scripts
 
 In the project directory, you can run:
