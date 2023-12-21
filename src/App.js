@@ -4,6 +4,7 @@ import { HomePage } from "./HomePage";
 import { BlogPage } from "./BlogPage";
 import { ProfilePage } from "./ProfilePage";
 import { Menu } from "./Menu";
+import { BlogPost } from "./BlogPost";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/blog" element={<BlogPage/>}></Route>
+          {/* Para enviar parámetros como el ejemplo del slug */}
+          <Route path="/blog/:slug" element={<BlogPost/>}></Route>
           <Route path="/profile" element={<ProfilePage/>}></Route>
           <Route path="*" element={<p>Not found</p>}> </Route>
         </Routes>
@@ -24,17 +27,4 @@ function App() {
   );
 }
 
-const routes = [];
-routes.push({
-  to: '/',
-  text: 'Home'
-});
-routes.push({
-  to: '/blog',
-  text: 'Blog'
-});
-routes.push({
-  to: '/profile',
-  text: 'Profile'
-});
 export default App;

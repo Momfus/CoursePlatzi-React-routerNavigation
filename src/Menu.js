@@ -1,6 +1,22 @@
 import React from "react";
 // Link se le coloca la propiedad "to" para indicarle a que ruta debe ir usando hash
-import { Link, NavLink } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import {NavLink } from "react-router-dom";
+
+
+const routes = [];
+routes.push({
+  to: '/',
+  text: 'Home'
+});
+routes.push({
+  to: '/blog',
+  text: 'Blog'
+});
+routes.push({
+  to: '/profile',
+  text: 'Profile'
+});
 
 function Menu() {
   return (
@@ -39,9 +55,9 @@ function Menu() {
 
         {/* Uando un objeto  */}
         {routes.map(route => (
-         <li>
+         <li key={route.to}>
             <NavLink 
-               style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}s
+               style={({ isActive }) => ({ color: isActive ? "red" : "blue" })}
                to={route.to}>{route.text}</NavLink>
          </li>
         ))}
@@ -51,17 +67,4 @@ function Menu() {
 }
 
 
-const routes = [];
-routes.push({
-  to: '/',
-  text: 'Home'
-});
-routes.push({
-  to: '/blog',
-  text: 'Blog'
-});
-routes.push({
-  to: '/profile',
-  text: 'Profile'
-});
 export { Menu };
