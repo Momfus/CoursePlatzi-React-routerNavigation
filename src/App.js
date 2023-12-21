@@ -24,4 +24,17 @@ function App() {
   );
 }
 
+const routes = [];
+routes.push({
+  to: '/',
+  text: 'Home'
+});
+routes.push({
+  to: '/blog',
+  text: 'Blog'
+});
+routes.push({
+  to: '/profile',
+  text: 'Profile'
+});
 export default App;
