@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
+// Esto se haría en back, aca es para hacer un fake auth
+const adminList = ['Irisval', 'momfus', 'arboleo'];
+
 const AuthContext = React.createContext();
 
 // Aca se utilizaria un fake auth para saber que se esta logueado o no
@@ -8,9 +11,9 @@ function AuthProvider({ children }) {
   const navigate = useNavigate();
   const [user, setUser] = React.useState(null);
 
-  const login = (username) => {
-    console.log(username);
-    setUser(username);
+  const login = ({username}) => {
+    const isAdmin = adminList.includes(username);
+    setUser({ username, isAdmin });
     navigate("/profile");
   };
 

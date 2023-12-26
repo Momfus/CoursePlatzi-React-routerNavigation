@@ -7,7 +7,7 @@ function ProfilePage() {
   return (
     <>
       <h1>Perfil</h1>
-      <p>Welcome, {auth.user?.username}</p>
+      {auth.user ? <p>Welcome, {auth.user.username}</p> : <p>No user is logged in.</p>}
     </>
   );
 }
