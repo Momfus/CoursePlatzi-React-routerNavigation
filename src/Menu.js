@@ -29,7 +29,8 @@ routes.push({
 routes.push({
   to: "/logout",
   text: "Logout",
-  private: false,
+  private: true,
+  publicOnly: false,
 });
 
 function Menu() {
@@ -74,7 +75,7 @@ function Menu() {
 
           // Retornar en caso que la ruta sea publica y hay usuario
           if( route.publicOnly && auth.user ) return null;
-          
+
           // Retornar en caso que la ruta sea privada y no hay usuario
           if( route.private && !auth.user ) return null;
 
