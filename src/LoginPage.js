@@ -7,8 +7,7 @@ function LoginPage() {
 
   const login = (e) => {
     e.preventDefault();
-    auth.login({username})
-    
+    auth.login({ username });
   };
 
   return (
