@@ -1,15 +1,16 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { blogdata } from "./blogdata";
-import { useAuth } from "./auth";
+import { useAuth } from "../auth";
+import { useData } from "./BlogContext";
+
 
 function BlogPost() {
   const navigate = useNavigate(); // Para navegar entre rutas
   const { slug } = useParams(); // Para obtener los parámetros de la ruta
+  const blogData = useData();
   const auth = useAuth();
   
-  const blogpost = blogdata.find((post) => post.slug === slug);
-
+  const blogpost = blogData.data.find((post) => post.slug === slug);
   const canDelete = auth.user?.isAdmin || auth.user?.username === blogpost.author;
 
   const returnToBlog = () => {
@@ -27,7 +28,7 @@ function BlogPost() {
 
       {/* Pare saber si es admin o el autor del blog*/}
       {canDelete && (
-        <button>Eliminar blogspost</button>
+        <button onClick={ () => blogData.deleteData(slug)} >Eliminar blogspost</button>
       )}
     </>
   );
