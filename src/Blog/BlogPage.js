@@ -1,9 +1,13 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import { useData } from "./BlogContext";
+import { useAuth } from "../auth";
 
 function BlogPage() {
   const blogData = useData();
+  const auth = useAuth();
+
+  const canCreate = auth.user?.isEditor;
 
   return (
     <>
@@ -21,6 +25,10 @@ function BlogPage() {
         </ul>
       ) : (
         <p>No hay posteos</p>
+      )}
+
+      {canCreate && (
+        <button onClick={() => blogData.createData()}>Create Post</button>
       )}
     </>
   );

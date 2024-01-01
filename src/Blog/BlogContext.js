@@ -23,8 +23,27 @@ const BlogProvider = ({ children }) => {
       navigate(`/blog/${slug}/edit`);
    }
 
+   const createData = () => {
+      navigate("/blog/create");
+   }
 
-   const blogData = {  data, addData, deleteData, editData };
+   const savePost = (post) => {
+      const auxData = [...data];
+      auxData.push(post);
+      setData(auxData);
+      navigate('/')
+   }
+
+   const editPost = (post, oldSlug) => {
+      const auxData = [...data];
+      const index = auxData.findIndex((item) => item.slug === oldSlug);
+      auxData[index] = post;
+      setData(auxData);
+      navigate('/');
+   }
+
+
+   const blogData = {  data, addData, deleteData, editData, createData, savePost, editPost };
 
    return (
       <BlogContext.Provider value={blogData}>

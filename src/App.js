@@ -36,7 +36,7 @@ function App() {
                   }
                 ></Route>
                 <Route
-                  path=":slug/create"
+                  path="create"
                   element={
                     <AuthRoute>
                       <BlogPostForm isNew={true} />
