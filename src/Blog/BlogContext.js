@@ -31,7 +31,7 @@ const BlogProvider = ({ children }) => {
       const auxData = [...data];
       auxData.push(post);
       setData(auxData);
-      navigate('/')
+      navigate(`/blog/${post.slug}`);
    }
 
    const editPost = (post, oldSlug) => {
@@ -39,7 +39,7 @@ const BlogProvider = ({ children }) => {
       const index = auxData.findIndex((item) => item.slug === oldSlug);
       auxData[index] = post;
       setData(auxData);
-      navigate('/');
+      navigate(`/blog/${post.slug}`);
    }
 
 

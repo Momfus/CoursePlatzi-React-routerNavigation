@@ -34,7 +34,7 @@ function BlogPostForm({ isNew }) {
     } else {
       blogData.editPost(post, oldSlug);
     }
-    navigate("/blog");
+  
   };
 
   const transformTitleToFriendlyUrl = (title) => {
