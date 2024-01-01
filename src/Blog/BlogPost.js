@@ -13,7 +13,7 @@ function BlogPost() {
   const blogpost = blogData.data.find((post) => post.slug === slug);
   const isUserAuthor =  auth.user?.username === blogpost.author;
   const canDelete = auth.user?.isAdmin || isUserAuthor;
-  const canEdit = auth.user?.isEditor || isUserAuthor;
+  const canEdit = auth.user?.isEditor && isUserAuthor;
 
   const returnToBlog = () => {
     navigate("/blog");

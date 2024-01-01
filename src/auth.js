@@ -17,6 +17,11 @@ const adminList = [
     username: "user",
     isAdmin: false,
     isEditor: false
+  },
+  {
+    username: "Momfus",
+    isAdmin: false,
+    isEditor: true
   }
 ];
 
