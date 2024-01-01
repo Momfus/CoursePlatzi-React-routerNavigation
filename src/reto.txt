@@ -1,4 +1,0 @@
-
-- Implementar el botón de eliminar blogpost (si es que tiene la autorización para eso)
-- Agregar una lista de escritoroes que pueden editar cualquier blogspot
-- Agregar un botón para crear un blogspot (esto lo puede hacer cualquiera que este logueado)

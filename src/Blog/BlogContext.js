@@ -6,21 +6,25 @@ const BlogContext = React.createContext();
 
 const BlogProvider = ({ children }) => {
    const [data, setData] = React.useState(blogdata);
-   const naviate = useNavigate();
+   const navigate = useNavigate();
 
    const addData = (newData) => {
       setData([...data, newData]);
-      naviate("/blog");
+      navigate("/blog");
    }
 
    const deleteData = (slug) => {
       const newData = data.filter((post) => post.slug !== slug);
       setData([...newData]);
-      naviate("/blog");
+      navigate("/blog");
+   }
+
+   const editData = (slug) => {
+      navigate(`/blog/${slug}/edit`);
    }
 
 
-   const blogData = {  data, addData, deleteData };
+   const blogData = {  data, addData, deleteData, editData };
 
    return (
       <BlogContext.Provider value={blogData}>

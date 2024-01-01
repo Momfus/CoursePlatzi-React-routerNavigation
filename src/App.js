@@ -8,6 +8,7 @@ import { AuthProvider, AuthRoute } from "./auth";
 import { BlogPage } from "./Blog/BlogPage";
 import { BlogPost } from "./Blog/BlogPost";
 import { BlogProvider } from "./Blog/BlogContext";
+import { BlogPostForm } from "./Blog/BlogPostForm";
 
 function App() {
   return (
@@ -26,6 +27,22 @@ function App() {
               <Route path="/blog" element={<BlogPage />}>
                 {/* Para enviar parámetros como el ejemplo del slug */}
                 <Route path=":slug" element={<BlogPost />}></Route>
+                <Route
+                  path=":slug/edit"
+                  element={
+                    <AuthRoute>
+                      <BlogPostForm isNew={false} />
+                    </AuthRoute>
+                  }
+                ></Route>
+                <Route
+                  path=":slug/create"
+                  element={
+                    <AuthRoute>
+                      <BlogPostForm isNew={true} />
+                    </AuthRoute>
+                  }
+                ></Route>
               </Route>
 
               <Route path="/login" element={<LoginPage />}></Route>

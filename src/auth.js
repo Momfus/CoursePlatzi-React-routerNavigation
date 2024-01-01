@@ -6,7 +6,7 @@ const adminList = [
   {
     username: "admin",
     isAdmin: true,
-    isEditor: true
+    isEditor: false
   },
   {
     username: "editor",
